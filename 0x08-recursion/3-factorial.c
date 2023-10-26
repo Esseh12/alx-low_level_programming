@@ -1,35 +1,16 @@
-#include <stdio.h>
 #include "main.h"
-#include <stdlib.h>
-#include <unistd.h>
 
-/** main - Entry point 
+/**
+ * factorial - returns the factorial of a number
+ * @n: number to return the factorial from
  *
- * Return: Always 0 (success)
- *
+ * Return: factorial of n
  */
-
 int factorial(int n)
 {
 if (n < 0)
-{
-return -1;
-}
-
+return (-1);
 if (n == 0)
-{
-return 1;
-}
-
+return (1);
 return (n * factorial(n - 1));
-}
-
-int main(void)
-{
-int f;
-
-f = factorial();
-puts(f);
-
-return (0);
 }

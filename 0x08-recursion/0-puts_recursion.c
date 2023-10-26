@@ -1,24 +1,19 @@
-#include <stdio.h>
-#include <unistd.h>
 #include "main.h"
 
-void _putschar(char c)
+/**
+ * _puts_recursion - function like puts();
+ * @s: input
+ * Return: Always 0 (Success)
+ */
+void _puts_recursion(char *s)
 {
-    write(1, &c, 1);
+if (*s)
+{
+_putchar(*s);
+_puts_recursion(s + 1);
 }
 
-void _puts_recursion(char *str)
-{
-    if (*str)
-    {
-        _putschar(*str);
-        _puts_recursion(str + 1);
-    }
+else{
+_putchar('\n');
 }
-
-int main(void)
-{
-    char *str[] = "Puts with recursion";
-    _puts_recursion(str);
-    return 0;
 }
